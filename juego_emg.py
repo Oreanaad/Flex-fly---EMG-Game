@@ -61,8 +61,8 @@ class BiofeedbackGame:
                 line = self.serial_port.readline().decode('utf-8').strip()
                 if line:
                     parts = line.split(',')
-                    self.raw_val_A = int(parts[0]) / 1023.0
-                    if len(parts) > 1: self.raw_val_B = int(parts[1]) / 1023.0
+                    self.raw_val_A = int(parts[0]) / 1000.0
+                    if len(parts) > 1: self.raw_val_B = int(parts[1]) / 1000.0
             except: pass
 
     def reset_game_data(self, keep_calibration=False):
